@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+
+  vars:
+    oracle_install_directory: /scratch/aime
+
+  tasks:
+    - name: Running rpm package command to install oracle-xe
+      command: rpm -ivh {{ oracle_install_directory }}/Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm
+    - name: Configure oracle
+      shell: /etc/init.d/oracle-xe configure responseFile={{ oracle_install_directory }}/Disk1/xe.rsp
