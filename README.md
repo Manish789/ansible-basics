@@ -25,8 +25,4 @@ In contrast, Ansible is push based by default. Making a change looks like this:
 
 The push-based approach has a significant advantage: you control when the changes happen to the servers.
 
-List of Ansible Playbooks
 
-1. Installing Oracle-XE 
-    - run-oracle-xe-package.yml
-    - xe.rsp
