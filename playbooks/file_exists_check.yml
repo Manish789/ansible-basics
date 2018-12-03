@@ -1,0 +1,12 @@
+# Ansible Example : To check if a file exists
+---
+- hosts: all
+  tasks:
+  - name: Ansible check file exists example.
+    stat:
+      path: /home/ec2-user/test/abcd.txt
+    register: file_details
+
+  - debug:
+      msg: "The File exists."
+    when: file_details.stat.exists
