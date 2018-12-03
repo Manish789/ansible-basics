@@ -1,0 +1,11 @@
+# Ansible Example : To check if the path is a directory.
+---
+- hosts: all
+  tasks:
+   - name: "Ansible Example : Check if directory exists."
+     stat:
+       path: /home/ec2-user/test
+     register: directory_details
+   - debug:
+       msg: "It is a directory"
+     when: directory_details.stat.exists and directory_details.stat.isdir
